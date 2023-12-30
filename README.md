@@ -16,10 +16,11 @@ cmake --build .
 ```
 
 __Flags__:
-* -h (-help) - print help message
+* -h (-help) - displays help message
 * -hz (-hide-zeros) - replace zeros with dots
 * -nogui - run terminal version of application __(not implemented yet)__
 * -d (-dump) [path/to/file] - dumps to specified file
+* -data - displays 
 
 ## Example
 Dump of this file:

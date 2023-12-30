@@ -11,6 +11,10 @@ project(${APPLICATION})
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
 
 set(SOURCES
-  "${SRC_DIR}/main.c")
+  "${SRC_DIR}/main.c"
+  "${SRC_DIR}/dump.c"
+  "${SRC_DIR}/data.c"
+  "${SRC_DIR}/stream.c"
+  "${SRC_DIR}/args.c")
 
 add_executable(${APPLICATION} ${SOURCES})
