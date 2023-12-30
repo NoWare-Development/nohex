@@ -19,7 +19,7 @@ void print_args(void) {
   printf("\t-h (-help) -- print this\n");
   printf("\t-hz (-hide-zeros) -- replace zeros with dots\n");
   printf("\t-nogui -- run terminal version of application\n");
-  printf("\t-d (-dump) [file] -- dumps to specified file\n");
+  printf("\t-d (-dump) [path/to/file] -- dumps to specified file\n");
 }
 
 void print_usage(void) {
