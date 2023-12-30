@@ -5,8 +5,8 @@
 
 #include "stream.h"
 
-void print_file_hex(uint8_t *buffer, uint32_t bytes_count, bool hide_zeros) {
-  stream_to_file(stdout, buffer, bytes_count, hide_zeros);
+void print_file_hex(settings sets, uint8_t *buffer, uint32_t bytes_count) {
+  stream_to_file(stdout, buffer, bytes_count, sets);
 }
 
 void dump_to_file(settings sets, char **argv, uint8_t *buffer, uint32_t bytes_count) {
@@ -20,7 +20,7 @@ void dump_to_file(settings sets, char **argv, uint8_t *buffer, uint32_t bytes_co
   fprintf(fp, "Dump of \"%s\"\n", argv[1]);
   fprintf(fp, "Generated via NoHex (https://github.com/NoWare-Development/nohex)\n\n");
 
-  stream_to_file(fp, buffer, bytes_count, sets.hide_zeros);
+  stream_to_file(fp, buffer, bytes_count, sets);
 
   fclose(fp);
 }

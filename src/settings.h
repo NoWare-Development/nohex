@@ -9,6 +9,7 @@ typedef struct settings {
   bool nogui;
   bool hide_zeros;
   bool dump;
+  bool data;
   unsigned int file_to_dump;
 } settings;
 

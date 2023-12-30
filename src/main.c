@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
   uint32_t bytes = 0;
   get_data(argv[1], buffer, &bytes);
 
-  print_file_hex(buffer, bytes, sets.hide_zeros);
+  print_file_hex(sets, buffer, bytes);
   if (sets.dump)
     dump_to_file(sets, argv, buffer, bytes);
 

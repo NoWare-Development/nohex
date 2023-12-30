@@ -48,6 +48,9 @@ void parse_arguments(int argc, char **argv, settings *sets) {
             i++;
           }
         }
+        else if (!strcmp(argv[i], "-data")) {
+          sets->data = true;
+        }
         else if (!strcmp(argv[i], "-nogui")) {
           fprintf(stdout, "Running terminal version...\n");
           sets->nogui = true;
