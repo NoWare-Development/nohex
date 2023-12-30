@@ -46,7 +46,6 @@ void parse_arguments(void) {
           hide_zeros = true;
         }
         else if (!strcmp(g_argv[i], "-d") || !strcmp(g_argv[i], "-dump")) {
-          printf("Parsing dump...\n");
           if (g_argv[i + 1] == 0)
             printf("No file to dump to\n");
           else {
@@ -54,7 +53,6 @@ void parse_arguments(void) {
             file_to_dump = i + 1;
             i++;
           }
-          printf("Parsed\n");
         }
         else if (!strcmp(g_argv[i], "-nogui")) {
           printf("Running terminal version...\n");
@@ -94,9 +92,8 @@ void print_file_content(char *file) {
   printf("| Address  | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |\n");
   printf("| -------- | ----------------------------------------------- |\n");
 
-  uint32_t i = 0;
   uint32_t pads = 0;
-  for (; i < bytes; i++) {
+  for (uint32_t i = 0; i < bytes; i++) {
     if (i % 0x10 == 0) {
       if (i != 0)
         printf("|\n");
@@ -129,15 +126,14 @@ void dump_to_file(uint8_t *buffer, uint32_t bytes) {
     exit(-2);
   }
 
-  fprintf(fp, "Dump of \"%s\"\n", g_argv[file_to_dump]);
+  fprintf(fp, "Dump of \"%s\"\n", g_argv[1]);
   fprintf(fp, "Generated via NoHex (https://github.com/NoWare-Development/nohex)\n\n");
 
   fprintf(fp, "| Address  | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |\n");
   fprintf(fp, "| -------- | ----------------------------------------------- |\n");
 
-  uint32_t i = 0;
   uint32_t pads = 0;
-  for (; i < bytes; i++) {
+  for (uint32_t i = 0; i < bytes; i++) {
     if (i % 0x10 == 0) {
       if (i != 0)
         fprintf(fp, "|\n");
