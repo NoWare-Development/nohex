@@ -12,10 +12,10 @@ void print_usage(void) {
 
 void print_args(void) {
   fprintf(stdout, "Flags:\n");
-  fprintf(stdout, "  -h (-help) -- display this message\n");
-  fprintf(stdout, "  -hz (-hide-zeros) -- replace zeros with dots\n");
-  fprintf(stdout, "  -nogui -- run terminal version of NoHex\n");
-  fprintf(stdout, "  -d (-dump) [path/to/file] -- dumps to specified file\n");
+  fprintf(stdout, "\t-h (-help) -- display this message\n");
+  fprintf(stdout, "\t-hz (-hide-zeros) -- replace zeros with dots\n");
+  fprintf(stdout, "\t-nogui -- run terminal version of NoHex\n");
+  fprintf(stdout, "\t-d (-dump) [path/to/file] -- dumps to specified file\n");
 }
 
 void parse_arguments(int argc, char **argv, settings *sets) {
