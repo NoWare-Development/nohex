@@ -4,8 +4,8 @@ __NoHex__ - simple HEX dumper
 ## Manual build
 ``` sh
 git clone https://github.com/NoWare-Development/nohex.git
-cd nohex/build
-cmake --build .
+cd nohex/
+make
 ```
 
 `nohex` executable file will appear in `build/` folder
@@ -23,12 +23,6 @@ __Flags__:
 * -data - displays 
 
 ## Example
-Dump of this file:
-```
-Hello, World!
-This is an example of NoHex!
-```
-
 ```
 Dump of "helloworld.txt"
 Generated via NoHex (https://github.com/NoWare-Development/nohex)
@@ -38,5 +32,11 @@ Generated via NoHex (https://github.com/NoWare-Development/nohex)
 | 00000000 | 48 65 6C 6C 6F 2C 20 57 6F 72 6C 64 21 0A 54 68 |
 | 00000010 | 69 73 20 69 73 20 61 6E 20 65 78 61 6D 70 6C 65 |
 | 00000020 | 20 6F 66 20 4E 6F 48 65 78 21 0A                |
+```
+
+Dump of this file:
+```
+Hello, World!
+This is an example of NoHex!
 ```
 
