@@ -57,7 +57,8 @@ void parse_arguments(int argc, char **argv, settings *sets) {
         }
         else {
           fprintf(stderr, "Unknown flag \"%s\"\n", argv[i]);
-          fprintf(stderr, "You can get all available flags by providing this argument: -h\n");
+          fprintf(stderr,
+          "You can get all available flags by providing this argument: -h\n");
         }
     }
   }
