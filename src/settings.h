@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 
-#define BUFFER_SIZE 0xFFFF
+#define BUFFER_SIZE 0xFFFFFFFF
 
 typedef struct settings {
   bool nogui;

@@ -5,12 +5,16 @@ OBJ=obj
 SRCS=$(wildcard $(SRC)/*.c)
 OBJS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 
-BUILDDIR=build
-EXECUTABLE=$(BUILDDIR)/nohex
+EXECUTABLE=nohex
+
+PACKAGEDIR=package
+PACKAGE=$(PACKAGEDIR)/nohex.tar.gz
+
+.PHONE: always tar clean
 
 always: $(EXECUTABLE)
 
-$(EXECUTABLE): $(BUILDDIR) $(OBJ) $(OBJS)
+$(EXECUTABLE): $(OBJ) $(OBJS)
 	rm -rf $(EXECUTABLE)
 	$(CC) $(OBJS) -o $(EXECUTABLE)
 
@@ -23,8 +27,14 @@ $(OBJ)/%.o: $(SRC)/%.c
 $(OBJ):
 	mkdir $@
 
-$(BUILDDIR):
+tar: $(PACKAGE)
+
+$(PACKAGE): $(EXECUTABLE) $(PACKAGEDIR)
+	tar -czvf $(PACKAGE) $(EXECUTABLE)
+
+$(PACKAGEDIR):
 	mkdir $@
 
 clean:
-	rm -rf $(BUILDDIR)/*
+	rm -rf $(EXECUTABLE)
+	rm -rf $(PACKAGEDIR)/*
